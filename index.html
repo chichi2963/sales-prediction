@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://financialtribune.com/sites/default/files/field/image/17january/ad_spend_688-ab.jpg'); /* Add your image path here */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-group button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Advertisement Expenditure</h2>
+        <form method="post" action="/">
+            <div class="form-group">
+                <label for="TV_spend">TV spend:</label>
+                <input type="number" name="TV_spend" required>
+            </div>
+            <div class="form-group">
+                <label for="Radio_spend">Radio spend:</label>
+                <input type="Radio_spend" name="Radio_spend" required>
+            </div>
+            <div class="form-group">
+                <label for="Newspaper_spend">Newspaper spend:</label>
+                <input type="Newspaper_spend" name="Newspaper_spend" required>
+            </div>
+            <button type="submit">Predict Sales</button>
+        </form>
+        {% if prediction_result is not none %}
+        <div>
+            <h2>Predicted Sales: ${{ prediction_result }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
